@@ -1,6 +1,7 @@
 export interface MenuItem {
   name: string;
   description: string;
+  price?: string;
 }
 
 export interface MenuCategory {
@@ -47,33 +48,43 @@ export const menuData: Record<string, MenuCategory[]> = {
     {
       label: "Entrantes",
       items: [
-        { name: "Salmorejo cordobés", description: "Con virutas de jamón y huevo" },
-        { name: "Croquetas de puchero", description: "Cremosas y artesanales" },
-        { name: "Ortiguillas fritas", description: "Crujientes del mar" },
+        { name: "Aceitunas", description: "", price: "0,50€" },
+        { name: "Tomate con melva", description: "Ración generosa de la casa", price: "7,50€" },
+        { name: "Ensaladilla rusa", description: "Tapa / Media / Ración", price: "2,70 / 5,50 / 9,50€" },
+        { name: "Ensaladilla de pulpo", description: "Tapa / Media / Ración", price: "3,00 / 6,00 / 12,00€" },
+        { name: "Pimiento con melva", description: "Tapa / Media / Ración", price: "3,00 / 6,00 / 12,00€" },
+        { name: "Queso viejo", description: "Tapa / Media / Ración", price: "3,50 / 7,00 / 13,00€" },
+      ],
+    },
+    {
+      label: "Fritos",
+      items: [
+        { name: "Croqueta de cocido", description: "Tapa / Media / Ración", price: "3,00 / 6,00 / 11,00€" },
+        { name: "Croqueta de cola", description: "Tapa / Media / Ración", price: "3,00 / 6,00 / 11,00€" },
+        { name: "Croqueta de bogavante", description: "Tapa / Media / Ración", price: "3,00 / 6,00 / 11,00€" },
+        { name: "Lagrimitas de pollo", description: "Tapa / Media / Ración", price: "3,50 / 7,00 / 13,00€" },
+        { name: "Saquitos de queso", description: "Tapa / Media / Ración" },
       ],
     },
     {
       label: "Pescados",
       items: [
-        { name: "Chocos fritos", description: "Crujientes y ligeros" },
-        { name: "Puntillitas fritas", description: "Delicadas y crujientes" },
-        { name: "Urta a la roteña", description: "Receta tradicional gaditana" },
-      ],
-    },
-    {
-      label: "Mariscos",
-      items: [
-        { name: "Gambas blancas de Huelva", description: "Cocidas en su punto" },
-        { name: "Cigalas a la plancha", description: "Frescura del Atlántico" },
-        { name: "Coquinas al ajillo", description: "Frescas del día" },
+        { name: "Boquerones", description: "", price: "7,00 / 13,00€" },
+        { name: "Adobo", description: "", price: "7,00 / 13,00€" },
+        { name: "Chocos", description: "", price: "7,00 / 13,00€" },
+        { name: "Puntillitas", description: "", price: "7,00 / 13,00€" },
+        { name: "Acedías", description: "", price: "7,00 / 13,00€" },
+        { name: "Salmonetes", description: "", price: "7,00 / 13,00€" },
+        { name: "Ortiguillas", description: "", price: "10,00€" },
       ],
     },
     {
       label: "Carnes",
       items: [
-        { name: "Rubia Gallega", description: "Maduración mínima 40 días" },
-        { name: "Frisona", description: "Corte premium a la brasa" },
-        { name: "Turina de Portugal", description: "Intenso sabor, textura excepcional" },
+        { name: "Albóndigas", description: "Tapa / Media / Ración", price: "3,50 / 7,00 / 13,00€" },
+        { name: "Carrillada", description: "Tapa / Media / Ración", price: "3,50 / 7,00 / 13,00€" },
+        { name: "Solomillo al whisky", description: "Tapa / Media / Ración", price: "3,50 / 7,00 / 13,00€" },
+        { name: "Presa ibérica", description: "Ración" },
       ],
     },
   ],

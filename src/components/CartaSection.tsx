@@ -57,11 +57,12 @@ export default function CartaSection() {
 
         <div className="max-w-2xl mx-auto space-y-6">
           {categories[activeCategory].items.map((item) => (
-            <div key={item.name} className="flex justify-between items-baseline border-b border-border pb-4">
+            <div key={item.name} className="flex justify-between items-baseline gap-4 border-b border-border pb-4">
               <div>
                 <h4 className="font-heading text-lg text-foreground">{item.name}</h4>
-                <p className="font-body text-sm text-muted-foreground">{item.description}</p>
+                {item.description && <p className="font-body text-sm text-muted-foreground">{item.description}</p>}
               </div>
+              {item.price && <span className="font-body text-sm text-gold whitespace-nowrap">{item.price}</span>}
             </div>
           ))}
         </div>
