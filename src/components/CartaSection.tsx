@@ -66,12 +66,6 @@ export default function CartaSection() {
             </div>
           ))}
         </div>
-
-        <AnimatedSection delay={0.2} className="text-center mt-12">
-          <button className="px-8 py-3 border border-foreground/20 text-foreground font-body text-sm tracking-wide hover:bg-foreground/5 transition-colors rounded-sm">
-            Ver carta completa
-          </button>
-        </AnimatedSection>
       </div>
     </section>
   );
