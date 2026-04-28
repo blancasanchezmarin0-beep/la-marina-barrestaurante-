@@ -8,6 +8,7 @@ import Historia from "./pages/Historia.tsx";
 import Gelves from "./pages/Gelves.tsx";
 import Coria from "./pages/Coria.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import SplashScreen from "./components/SplashScreen.tsx";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <SplashScreen />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/historia" element={<Historia />} />

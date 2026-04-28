@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/home-hero.jpg";
 
 export default function HeroSection() {
   const scrollTo = (id: string) => {
@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="Restaurante La Marina" className="w-full h-full object-cover" width={1920} height={1080} />
+        <img src={heroBg} alt="Restaurante La Marina" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-soft-black/60" />
       </div>
 
@@ -19,7 +19,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4"
+          className="text-gold font-body text-xs tracking-[0.3em] uppercase mb-4"
         >
           Desde 2007
         </motion.p>
@@ -27,7 +27,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-off-white mb-6"
+          className="font-heading font-normal text-4xl md:text-6xl lg:text-7xl text-off-white mb-6"
         >
           LA MARINA
         </motion.h1>
@@ -35,7 +35,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="font-heading text-xl md:text-2xl text-off-white/90 italic mb-3"
+          className="font-heading font-normal text-lg md:text-xl text-off-white/90 italic mb-3"
         >
           Sabor del mar. Tradición que evoluciona.
         </motion.p>

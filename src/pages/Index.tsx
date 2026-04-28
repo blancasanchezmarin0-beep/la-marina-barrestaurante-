@@ -5,7 +5,7 @@ import HistoriaSection from "@/components/HistoriaSection";
 import UbicacionesSection from "@/components/UbicacionesSection";
 import GaleriaSection from "@/components/GaleriaSection";
 import ReservasSection from "@/components/ReservasSection";
-import CtaFinal from "@/components/CtaFinal";
+
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -15,9 +15,9 @@ const Index = () => (
     <CartaSection />
     <HistoriaSection />
     <UbicacionesSection />
-    <GaleriaSection />
     <ReservasSection />
-    <CtaFinal />
+    <GaleriaSection />
+
     <Footer />
   </>
 );

@@ -15,8 +15,8 @@ export default function ReservasSection() {
 
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {[
-            { location: "Gelves", phone: "+34 674 322 897", phoneRaw: "+34674322897", address: "Pl. de la Marina, 1" },
-            { location: "Coria del Río", phone: "+34 614 940 256", phoneRaw: "+34614940256", address: "Calle Batán, 95" },
+            { location: "Gelves", phone: "+34 674 322 897", phoneRaw: "+34674322897", address: "Pl. de la Marina, 1", mapsLink: "https://share.google/18HQvkOaVOtBli8Ul" },
+            { location: "Coria del Río", phone: "+34 614 940 256", phoneRaw: "+34614940256", address: "Calle Batán, 95", mapsLink: "https://share.google/jsPn75LlDP20kz9i4" },
           ].map((item, i) => (
             <AnimatedSection key={item.location} delay={i * 0.15}>
               <a
