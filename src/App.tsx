@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import Historia from "./pages/Historia.tsx";
-import Gelves from "./pages/Gelves.tsx";
-import Coria from "./pages/Coria.tsx";
-import NotFound from "./pages/NotFound.tsx";
-import SplashScreen from "./components/SplashScreen.tsx";
+import Index from "./pages/Index";
+import Historia from "./pages/Historia";
+import Gelves from "./pages/Gelves";
+import Coria from "./pages/Coria";
+import NotFound from "./pages/NotFound";
+import SplashScreen from "./components/SplashScreen";
 
 const queryClient = new QueryClient();
 
