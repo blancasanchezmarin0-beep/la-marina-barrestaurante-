@@ -134,5 +134,14 @@ export const menuData: Record<string, MenuCategory[]> = {
         { name: "Presa ibérica", description: "Ración", price: "14,00€" },
       ],
     },
+    {
+      label: "Montaditos",
+      items: [
+        { name: "Pimientos con melva", description: "", price: "3,20€" },
+        { name: "Solomillo con jamón", description: "", price: "3,20€" },
+        { name: "Solomillo con jamón y queso", description: "", price: "3,50€" },
+        { name: "Solomillo al whisky", description: "", price: "3,20€" },
+      ],
+    },
   ],
 };

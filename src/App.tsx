@@ -9,6 +9,7 @@ import Gelves from "./pages/Gelves";
 import Coria from "./pages/Coria";
 import NotFound from "./pages/NotFound";
 import SplashScreen from "./components/SplashScreen";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <SplashScreen />
         <Routes>
           <Route path="/" element={<Index />} />

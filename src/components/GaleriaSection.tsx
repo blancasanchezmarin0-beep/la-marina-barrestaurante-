@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
-import imgSalon from "@/assets/coria/salon.jpg";
-import imgBarril from "@/assets/coria/barril.jpg";
-import imgTerraza from "@/assets/coria/terraza.jpg";
-import imgExterior from "@/assets/coria/fachada.jpg";
-import imgHero from "@/assets/coria/hero.jpg";
+import imgPatio from "@/assets/gallery-patio.png";
+import imgMeat from "@/assets/gallery-meat.jpg";
+import imgTuna from "@/assets/gallery-tuna.jpg";
+import imgOutside from "@/assets/gallery-outside.jpg";
+import imgFish from "@/assets/gallery-fish.jpg";
 
 const defaultImages = [
-  { src: imgSalon, title: "Nuestro salón principal", category: "Ambiente", size: "wide" },
-  { src: imgExterior, title: "Nos vemos en La Marina", category: "Nosotros", size: "medium" },
-  { src: imgBarril, title: "Rincones de La Marina", category: "Ambiente", size: "tall" },
-  { src: imgHero, title: "Vistas y atardeceres", category: "Entorno", size: "medium" },
-  { src: imgTerraza, title: "Disfruta al aire libre", category: "Terraza", size: "wide" },
+  { src: imgFish, title: "Fritura tradicional", category: "Gastronomía", size: "wide" },
+  { src: imgOutside, title: "Nuestra casa en Gelves", category: "Nosotros", size: "medium" },
+  { src: imgPatio, title: "Ambiente y tradición", category: "Ambiente", size: "tall" },
+  { src: imgMeat, title: "Carnes seleccionadas", category: "Gastronomía", size: "medium" },
+  { src: imgTuna, title: "Producto del mar", category: "Gastronomía", size: "wide" },
 ];
 
 export interface GalleryImage {

@@ -4,18 +4,16 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Clock, Mail, Flame, Beef, Anchor, Waves, ArrowRight } from "lucide-react";
 
 import ancla from "@/assets/ancla.png";
-import imgOrigen from "@/assets/historia-img1.jpg";
-import imgMadurez from "@/assets/gelves-gallery2.jpg";
+import imgOrigen from "@/assets/gallery-fish.jpg";
+import imgMadurez from "@/assets/gallery-meat.jpg";
 import imgSpace1 from "@/assets/coria/salon.jpg";
-import imgSpace2 from "@/assets/coria/terraza.jpg";
-import imgSpace3 from "@/assets/coria/fachada.jpg";
+import imgSpace2 from "@/assets/coria-hero-2056.jpg"; // Using this as 'Coria1'
+import imgSpace3 from "@/assets/celebraciones-nueva.jpg"; // New celebrations hall image
 import imgSpace4 from "@/assets/coria/barril.jpg";
-
-import imgFritura from "@/assets/gelves-gallery1.jpg";
-import imgCarne from "@/assets/gelves-gallery2.jpg";
+import imgHeroVisual from "@/assets/coria-hero-2055.jpg";
 
 export default function HistoriaPage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -25,207 +23,326 @@ export default function HistoriaPage() {
     offset: ["start start", "end start"]
   });
 
-  const anchorY = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const anchorY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen font-body text-[#1A445C]">
       <Navbar />
       
-      {/* 1. Cabecera (Hero Section) */}
-      <section ref={heroRef} className="relative pt-48 pb-20 md:pt-64 md:pb-40 px-4 overflow-hidden">
-        {/* Anchor Watermark */}
+      {/* 1. Hero / Cabecera con Visual */}
+      <section ref={heroRef} className="relative h-[65vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Visual Background */}
+        <div className="absolute inset-0">
+          <img 
+            src={imgHeroVisual} 
+            alt="La Marina" 
+            className="w-full h-full object-cover scale-105"
+          />
+          {/* Dark Blue Overlay */}
+          <div className="absolute inset-0 bg-[#1A445C]/60 backdrop-blur-[2px]" />
+        </div>
+
         <motion.img
           src={ancla}
           alt=""
-          style={{ y: anchorY }}
-          className="absolute -top-10 -left-10 w-[350px] md:w-[550px] opacity-[0.1] rotate-[30deg] pointer-events-none select-none text-[#87CEEB]"
+          style={{ y: anchorY, opacity: 0.15 }}
+          className="absolute w-[400px] md:w-[600px] rotate-[15deg] -right-20 -top-20 pointer-events-none select-none"
         />
         
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
+        <motion.div style={{ opacity }} className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <AnimatedSection>
-            <h1 className="font-heading font-normal text-5xl md:text-8xl text-[#1A445C] leading-none mb-6">
+            <p className="font-body text-[11px] tracking-[0.6em] uppercase text-[#87CEEB] mb-6 font-semibold">Legado y Tradición</p>
+            <h1 className="font-heading font-normal text-5xl md:text-8xl text-white leading-none mb-6">
               Nuestra Historia
             </h1>
-            <div className="mt-8 h-[1px] w-20 bg-[#87CEEB] mx-auto opacity-50"></div>
+            <p className="font-heading italic text-lg md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+              Un viaje de sabor que nace a orillas del Guadalquivir.
+            </p>
           </AnimatedSection>
+        </motion.div>
+
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+          <div className="w-[1px] h-12 bg-white"></div>
         </div>
       </section>
 
-      {/* 2. Bloque 1: El Origen (2007) */}
-      <section className="py-20 md:py-32 max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-7">
+      {/* 2. Sección: El Origen */}
+      <section className="py-24 md:py-44 max-w-7xl mx-auto px-6 overflow-hidden">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+          <div className="relative order-2 lg:order-1">
             <AnimatedSection>
-              <p className="font-body text-[10px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6">Est. 2007</p>
-              <h2 className="font-heading text-3xl md:text-5xl text-[#1A445C] mb-8 leading-tight">El Origen</h2>
-              <p className="font-body text-[#1A445C]/80 text-lg md:text-xl leading-[1.8] font-light">
-                La Marina abrió sus puertas en mayo de 2007 con una promesa: honrar la calidad del mar. Lo que comenzó como un sueño familiar a orillas del Guadalquivir en Gelves, es hoy el hogar del sabor más puro.
-              </p>
-            </AnimatedSection>
-          </div>
-          <div className="md:col-span-5">
-            <AnimatedSection delay={0.2}>
-              <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
-                <img src={imgOrigen} alt="Orígenes de La Marina" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+              <div className="relative group">
+                <div className="absolute -inset-4 border border-[#87CEEB]/20 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700"></div>
+                <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
+                  <img 
+                    src={imgOrigen} 
+                    alt="Origen de La Marina" 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
+                  />
+                </div>
               </div>
             </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Bloque 2: La Madurez y la Tierra */}
-      <section className="py-20 md:py-32 max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-5 order-2 md:order-1">
-            <AnimatedSection>
-              <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
-                <img src={imgMadurez} alt="Madurez y carnes" className="w-full h-full object-cover" />
-              </div>
-            </AnimatedSection>
-          </div>
-          <div className="md:col-span-7 order-1 md:order-2">
-            <AnimatedSection delay={0.2} className="md:pl-12">
-              <p className="font-body text-[10px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6">Evolución</p>
-              <h2 className="font-heading text-3xl md:text-5xl text-[#1A445C] mb-8 leading-tight">La Madurez y la Tierra</h2>
-              <p className="font-body text-[#1A445C]/80 text-lg md:text-xl leading-[1.8] font-light">
-                Sin perder nuestra esencia marinera, hemos incorporado carnes de alta gama: desde la potencia de la Frisona y la Rubia Gallega, hasta la delicadeza de la Turina de Portugal. Excelencia en cada corte.
-              </p>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Bloque 3: Expansión 2026 y Espacios */}
-      <section className="bg-[#87CEEB]/10 py-24 md:py-40">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-12 gap-16 items-start">
-            <div className="md:col-span-6">
-              <AnimatedSection>
-                <h2 className="font-heading text-4xl md:text-6xl text-[#1A445C] mb-10 leading-tight">Expansión 2026</h2>
-                <p className="font-body text-[#1A445C] text-lg md:text-xl leading-[1.8] font-light mb-12">
-                  En 2026, abrimos un nuevo concepto junto al río, conectando Gelves y Coria del Río bajo una misma identidad. Disponemos de 4 espacios diseñados para cada ocasión:
-                </p>
-                <ul className="space-y-8">
-                  {[
-                    { title: "Terraza Exterior", desc: "Brisa directa del Guadalquivir" },
-                    { title: "Patio Interior", desc: "Un oasis de luz natural" },
-                    { title: "Salón Interior", desc: "Elegancia y confort contemporáneo" },
-                    { title: "Salón de Celebraciones", desc: "El escenario para tus momentos inolvidables" }
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-6 items-start">
-                      <div className="mt-2 h-[1px] w-8 bg-[#1A445C]/30"></div>
-                      <div>
-                        <h4 className="font-heading text-lg text-[#1A445C] mb-1">{item.title}</h4>
-                        <p className="font-body text-sm text-[#1A445C]/60 italic">{item.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </AnimatedSection>
+            {/* Minimalist floating year */}
+            <div className="absolute -bottom-10 -right-10 hidden md:block">
+              <span className="text-[12rem] font-heading leading-none text-[#87CEEB]/10 select-none">2007</span>
             </div>
-            <div className="md:col-span-6">
-              <AnimatedSection delay={0.3}>
-                <div className="grid grid-cols-2 gap-4">
-                  {[imgSpace1, imgSpace2, imgSpace3, imgSpace4].map((img, i) => (
-                    <div key={i} className="aspect-square rounded-sm overflow-hidden shadow-lg group">
-                      <img src={img} alt="Ambiente La Marina" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          </div>
+
+          <div className="space-y-12 order-1 lg:order-2">
+            <AnimatedSection>
+              <div className="flex items-center gap-4 mb-8">
+                <span className="w-12 h-[1px] bg-[#87CEEB]"></span>
+                <p className="font-body text-xs tracking-widest uppercase text-[#87CEEB] font-bold">EST. 2007</p>
+              </div>
+              <h2 className="font-heading text-4xl md:text-6xl text-[#1A445C] leading-tight mb-10">El Origen</h2>
+              <div className="space-y-8 max-w-xl">
+                <p className="font-body text-gray-600 text-lg md:text-xl leading-[1.9] font-light">
+                  La Marina abrió sus puertas en mayo de 2007 con una idea clara: <span className="text-[#1A445C] font-normal">rendir homenaje al sabor auténtico del mar.</span> Nacida como un sueño familiar a orillas del Guadalquivir, en Gelves, este proyecto creció entre tradición, producto fresco y el respeto por la cocina de siempre.
+                </p>
+                <p className="font-body text-gray-600 text-lg md:text-xl leading-[1.9] font-light">
+                  Cada plato cuenta una historia que empieza en el mar y termina en la mesa. Aquí, la sencillez no es casualidad: es una elección. Porque cuando la materia prima es buena, solo hace falta tratarla con cariño.
+                </p>
+                <p className="font-body text-gray-600 text-lg leading-[1.9] font-light italic border-l-2 border-[#87CEEB] pl-8 py-2">
+                  Hoy, La Marina sigue siendo ese lugar donde compartir, disfrutar sin prisas y volver a los sabores de verdad. Un rincón donde el tiempo se detiene y el protagonista siempre es el producto.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Sección: Evolución - La Madurez y la Tierra */}
+      <section className="relative py-24 md:py-48 bg-[#1A445C] text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
+          <AnimatedSection className="text-center mb-16 md:mb-24">
+            <p className="font-body text-[10px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6">Trayectoria</p>
+            <h2 className="font-heading text-4xl md:text-7xl mb-8">Evolución</h2>
+            <div className="w-16 h-[1px] bg-[#87CEEB] mx-auto"></div>
+          </AnimatedSection>
+
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="space-y-10 md:space-y-12">
+              <AnimatedSection>
+                <div className="flex items-center gap-4 mb-4 md:mb-6">
+                  <Beef className="text-[#87CEEB]" size={32} />
+                  <span className="font-body text-xs md:text-sm tracking-widest uppercase text-[#87CEEB] font-bold">La Madurez y la Tierra</span>
+                </div>
+                <h3 className="font-heading text-3xl md:text-5xl mb-8 leading-tight">Excelencia en cada corte</h3>
+                
+                <div className="space-y-6 mb-12">
+                  <p className="font-body text-gray-300 text-[17px] md:text-xl leading-[1.8] md:leading-[2] font-light max-w-xl">
+                    Sin perder nuestra esencia marinera, hemos incorporado carnes de alta gama: desde la potencia de la <span className="text-white font-normal border-b border-[#87CEEB]">Frisona y la Rubia Gallega</span>, hasta la delicadeza de la Turina de Portugal.
+                  </p>
+                  <p className="font-body text-gray-300 text-[17px] md:text-xl leading-[1.8] md:leading-[2] font-light max-w-xl">
+                    Excelencia en cada corte, tratada con el mismo respeto que nuestros productos del mar.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-6 md:gap-8 max-w-xs">
+                  {[
+                    { icon: Beef, label: "Cortes madurados" },
+                    { icon: Flame, label: "Parrilla tradicional" },
+                    { icon: Anchor, label: "Origen certificado" }
+                  ].map((item, i) => (
+                    <div key={i} className="group flex items-center gap-6">
+                      <div className="p-3 bg-white/5 rounded-full group-hover:bg-[#87CEEB]/20 transition-colors">
+                        <item.icon className="text-[#87CEEB] group-hover:scale-110 transition-transform" size={28} />
+                      </div>
+                      <p className="text-[13px] tracking-[0.2em] uppercase font-semibold text-gray-300 group-hover:text-white transition-colors">{item.label}</p>
                     </div>
                   ))}
                 </div>
               </AnimatedSection>
             </div>
+            
+            <AnimatedSection delay={0.2} className="relative">
+              <div className="aspect-square rounded-full overflow-hidden border-[1px] border-[#87CEEB]/30 p-4">
+                <img src={imgMadurez} alt="Carnes Premium" className="w-full h-full object-cover rounded-full brightness-110 hover:scale-105 transition-all duration-1000" />
+              </div>
+              <div className="absolute top-0 right-0 p-8 bg-[#87CEEB] text-[#1A445C] rounded-full -translate-y-1/2 translate-x-1/2 hidden md:block shadow-2xl">
+                <Beef size={40} />
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* 5. Bloque 4: Restaurantes (Sedes Premium) */}
-      <section className="py-24 md:py-40 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* 4. Sección: Expansión 2026 */}
+      <section className="py-32 md:py-52 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+            <AnimatedSection className="max-w-2xl">
+              <p className="font-body text-[11px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6 font-bold">Futuro</p>
+              <h2 className="font-heading text-5xl md:text-8xl text-[#1A445C] leading-[0.9] mb-8">Expansión <span className="text-[#87CEEB]">2026</span></h2>
+              <p className="font-body text-gray-500 text-lg md:text-xl leading-relaxed">
+                En 2026, abrimos un nuevo concepto junto al río, conectando Gelves y Coria del Río bajo una misma identidad. Disponemos de 4 espacios diseñados para cada ocasión:
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.3} className="hidden md:block">
+              <div className="flex items-center gap-4 text-[#87CEEB]">
+                <span className="text-sm font-body tracking-[0.3em] uppercase whitespace-nowrap">Desliza para explorar</span>
+                <ArrowRight size={24} className="animate-pulse" />
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Terraza Exterior", desc: "Brisa directa del Guadalquivir", img: imgSpace2 },
+              { title: "Patio Interior", desc: "Un oasis de luz natural", img: imgSpace4 },
+              { title: "Salón Interior", desc: "Elegancia y confort contemporáneo", img: imgSpace1 },
+              { title: "Salón de Celebraciones", desc: "El escenario para tus momentos inolvidables", img: imgSpace3 }
+            ].map((space, i) => (
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                  <img src={space.img} alt={space.title} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A445C] via-[#1A445C]/20 to-transparent p-8 flex flex-col justify-end">
+                    <h4 className="font-heading text-2xl text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{space.title}</h4>
+                    <p className="font-body text-xs text-white/60 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 italic">{space.desc}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Sección final: Información de los dos locales */}
+      <section className="py-24 md:py-44 bg-gray-50 overflow-hidden relative">
+        <motion.img
+          src={ancla}
+          alt=""
+          className="absolute -bottom-20 -left-20 w-[400px] opacity-[0.03] select-none pointer-events-none"
+        />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <AnimatedSection className="text-center mb-20">
-            <h2 className="font-heading text-4xl md:text-6xl text-[#1A445C] mb-4">Restaurantes</h2>
-            <div className="h-[1px] w-12 bg-[#87CEEB] mx-auto opacity-60"></div>
+            <h2 className="font-heading text-4xl md:text-7xl text-[#1A445C]">Dos Sedes, Un Espíritu</h2>
+            <div className="mt-8 h-[2px] w-12 bg-[#87CEEB] mx-auto"></div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-start mb-32">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
             {/* Gelves */}
-            <AnimatedSection className="flex flex-col items-center text-center">
-              <div className="w-full aspect-[4/3] rounded-sm overflow-hidden shadow-xl mb-10">
-                <img src={imgFritura} alt="Fritura La Marina Gelves" className="w-full h-full object-cover" />
+            <AnimatedSection className="bg-white p-10 md:p-16 rounded-sm shadow-sm border-t-4 border-[#87CEEB] hover:shadow-xl transition-shadow duration-500">
+              <div className="flex justify-between items-start mb-12">
+                <div>
+                  <h3 className="font-heading text-3xl text-[#1A445C] mb-2">La Marina Gelves</h3>
+                  <p className="font-body text-xs tracking-widest uppercase text-[#87CEEB] font-bold">Nuestra Casa Original</p>
+                </div>
+                <Anchor className="text-[#87CEEB]" size={36} />
               </div>
-              <h3 className="font-heading text-2xl md:text-3xl text-[#1A445C] mb-6">La Marina Gelves</h3>
-              <div className="space-y-2 mb-10">
-                <p className="font-body text-[#1A445C]/60 text-sm flex items-center justify-center gap-2">
-                  <MapPin size={16} className="text-[#87CEEB]" /> Pl. de la Marina, 1 · Gelves
-                </p>
-                <p className="font-body text-[#1A445C]/60 text-sm flex items-center justify-center gap-2">
-                  <Phone size={16} className="text-[#87CEEB]" /> +34 674 322 897
-                </p>
+              
+              <div className="space-y-8 mb-12">
+                <div className="flex items-start gap-6">
+                  <MapPin className="text-[#87CEEB] mt-1 shrink-0" size={20} />
+                  <div>
+                    <p className="font-body text-sm font-semibold mb-1">Dirección</p>
+                    <p className="font-body text-gray-500 text-sm">Plaza de la Marina, 1 · Gelves</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <Phone className="text-[#87CEEB] mt-1 shrink-0" size={20} />
+                  <div>
+                    <p className="font-body text-sm font-semibold mb-1">Contacto</p>
+                    <p className="font-body text-gray-500 text-sm">+34 674 322 897</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <Clock className="text-[#87CEEB] mt-1 shrink-0" size={20} />
+                  <div>
+                    <p className="font-body text-sm font-semibold mb-1">Horario</p>
+                    <p className="font-body text-gray-500 text-sm">Martes a Domingo: 12:00 — 00:00</p>
+                    <p className="font-body text-gray-400 text-xs mt-1 italic">Lunes cerrado por descanso</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <Link to="/gelves" className="px-8 py-3 bg-[#1A445C] text-white font-body text-xs tracking-widest uppercase rounded-sm hover:bg-[#004865] transition-all flex items-center justify-center gap-2">
-                  Explorar <ArrowUpRight size={14} />
+
+              <div className="flex gap-4">
+                <Link to="/gelves" className="flex-1 bg-[#1A445C] text-white text-center py-4 font-body text-[10px] tracking-widest uppercase rounded-sm hover:bg-[#2a5b7a] transition-all">
+                  Página de Gelves
                 </Link>
-                <a href="https://share.google/18HQvkOaVOtBli8Ul" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-[#C5A059] text-[#1A445C] font-body text-xs tracking-widest uppercase rounded-sm hover:bg-sand/20 transition-all flex items-center justify-center">
+                <a href="https://share.google/18HQvkOaVOtBli8Ul" target="_blank" rel="noopener noreferrer" className="flex-1 border border-gray-200 text-[#1A445C] text-center py-4 font-body text-[10px] tracking-widest uppercase rounded-sm hover:bg-gray-50 transition-all">
                   Cómo llegar
                 </a>
               </div>
             </AnimatedSection>
 
             {/* Coria */}
-            <AnimatedSection delay={0.2} className="flex flex-col items-center text-center">
-              <div className="w-full aspect-[4/3] rounded-sm overflow-hidden shadow-xl mb-10">
-                <img src={imgCarne} alt="Carnes La Marina Coria" className="w-full h-full object-cover" />
+            <AnimatedSection delay={0.2} className="bg-white p-10 md:p-16 rounded-sm shadow-sm border-t-4 border-[#1A445C] hover:shadow-xl transition-shadow duration-500">
+              <div className="flex justify-between items-start mb-12">
+                <div>
+                  <h3 className="font-heading text-3xl text-[#1A445C] mb-2">La Marina Coria</h3>
+                  <p className="font-body text-xs tracking-widest uppercase text-[#87CEEB] font-bold">Nueva Sede</p>
+                </div>
+                <Waves className="text-[#87CEEB]" size={36} />
               </div>
-              <h3 className="font-heading text-2xl md:text-3xl text-[#1A445C] mb-6">La Marina Coria</h3>
-              <div className="space-y-2 mb-10">
-                <p className="font-body text-[#1A445C]/60 text-sm flex items-center justify-center gap-2">
-                  <MapPin size={16} className="text-[#87CEEB]" /> Calle Batán, 95 · Coria del Río
-                </p>
-                <p className="font-body text-[#1A445C]/60 text-sm flex items-center justify-center gap-2">
-                  <Phone size={16} className="text-[#87CEEB]" /> +34 614 940 256
-                </p>
+              
+              <div className="space-y-8 mb-12">
+                <div className="flex items-start gap-6">
+                  <MapPin className="text-[#1A445C] mt-1 shrink-0" size={20} />
+                  <div>
+                    <p className="font-body text-sm font-semibold mb-1">Dirección</p>
+                    <p className="font-body text-gray-500 text-sm">Calle Batán, 95 · Coria del Río</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <Phone className="text-[#1A445C] mt-1 shrink-0" size={20} />
+                  <div>
+                    <p className="font-body text-sm font-semibold mb-1">Contacto</p>
+                    <p className="font-body text-gray-500 text-sm">+34 614 940 256</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <Clock className="text-[#1A445C] mt-1 shrink-0" size={20} />
+                  <div>
+                    <p className="font-body text-sm font-semibold mb-1">Horario</p>
+                    <p className="font-body text-gray-500 text-sm">Martes a Domingo: 12:00 — 00:00</p>
+                    <p className="font-body text-gray-400 text-xs mt-1 italic">Lunes cerrado por descanso</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <Link to="/coria" className="px-8 py-3 bg-[#1A445C] text-white font-body text-xs tracking-widest uppercase rounded-sm hover:bg-[#004865] transition-all flex items-center justify-center gap-2">
-                  Explorar <ArrowUpRight size={14} />
+
+              <div className="flex gap-4">
+                <Link to="/coria" className="flex-1 bg-[#1A445C] text-white text-center py-4 font-body text-[10px] tracking-widest uppercase rounded-sm hover:bg-[#2a5b7a] transition-all">
+                  Página de Coria
                 </Link>
-                <a href="https://share.google/jsPn75LlDP20kz9i4" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-[#C5A059] text-[#1A445C] font-body text-xs tracking-widest uppercase rounded-sm hover:bg-sand/20 transition-all flex items-center justify-center">
+                <a href="https://share.google/jsPn75LlDP20kz9i4" target="_blank" rel="noopener noreferrer" className="flex-1 border border-gray-200 text-[#1A445C] text-center py-4 font-body text-[10px] tracking-widest uppercase rounded-sm hover:bg-gray-50 transition-all">
                   Cómo llegar
                 </a>
               </div>
             </AnimatedSection>
           </div>
-          
-          <AnimatedSection>
-            <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-sm overflow-hidden shadow-2xl border border-[#87CEEB]/20">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50711.6917637508!2d-6.065096577880856!3d37.30799797205165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126efee60633b3%3A0xb5b7fd8f78028ff!2sLa%20Marina!5e0!3m2!1ses!2ses!4v1714312000000!5m2!1ses!2ses"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: "grayscale(1) contrast(1.1) brightness(0.9)" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa sedes La Marina"
-              />
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
-      {/* 6. Cierre y Acción */}
-      <section className="pt-10 pb-40 text-center px-4">
-        <AnimatedSection>
-          <p className="font-body italic text-2xl md:text-4xl text-[#1A445C] mb-12">
-            Tu próximo capítulo en el río comienza aquí.
-          </p>
-          <Link
-            to="/#reservas"
-            className="inline-block px-14 py-5 bg-[#1A445C] text-white font-body text-xs md:text-sm tracking-[0.4em] uppercase rounded-sm hover:bg-[#004865] transition-all duration-500 shadow-xl"
-          >
-            Reservar tu mesa
-          </Link>
-        </AnimatedSection>
+      {/* Cierre emocional con imagen de fondo */}
+      <section className="relative py-48 md:py-64 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src={imgSpace2} 
+            alt="La Marina Terraza" 
+            className="w-full h-full object-cover grayscale brightness-50"
+          />
+          {/* Deep Petroleum Blue Overlay (70% opacity) */}
+          <div className="absolute inset-0 bg-[#1A445C]/70" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+          <AnimatedSection>
+            <Waves className="text-[#87CEEB] mx-auto mb-12 animate-vertical-bounce" size={48} />
+            <h2 className="font-heading italic text-4xl md:text-6xl text-white mb-16 max-w-4xl mx-auto leading-tight">
+              "Donde el río abraza a la tradición, comienza tu experiencia en La Marina."
+            </h2>
+            <Link
+              to="/#reservas"
+              className="inline-block px-14 py-5 bg-[#87CEEB] text-[#1A445C] font-body text-sm tracking-[0.4em] uppercase rounded-sm hover:bg-[#78D4EC] transition-all duration-500 shadow-2xl font-bold"
+            >
+              Reservar tu mesa
+            </Link>
+          </AnimatedSection>
+        </div>
       </section>
 
       <Footer />

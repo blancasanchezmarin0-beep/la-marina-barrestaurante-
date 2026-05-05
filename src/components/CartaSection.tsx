@@ -34,7 +34,7 @@ export default function CartaSection() {
       />
       <div className="relative z-10 max-w-5xl mx-auto px-4">
         <AnimatedSection className="text-center mb-12">
-          <p className="text-gold font-body text-xs tracking-[0.2em] uppercase mb-3">Gastronomía</p>
+          <p className="text-[#87CEEB] font-body text-xs tracking-[0.2em] uppercase mb-3">Gastronomía</p>
           <h2 className="font-heading font-normal text-3xl md:text-4xl text-foreground mb-4">Nuestra carta</h2>
           <p className="font-body text-muted-foreground max-w-lg mx-auto">
             Selecciona tu restaurante y descubre nuestra propuesta gastronómica.
@@ -64,7 +64,7 @@ export default function CartaSection() {
               onClick={() => setActiveCategory(i)}
               className={`px-4 py-2 text-sm font-body transition-all border-b-2 ${
                 activeCategory === i
-                  ? "border-gold text-foreground"
+                  ? "border-[#1A445C] text-foreground"
                   : "border-transparent text-muted-foreground hover:text-foreground"
               }`}
             >

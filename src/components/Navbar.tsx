@@ -57,7 +57,7 @@ export default function Navbar() {
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.path)}
-                  className="text-sm font-body tracking-wide text-off-white/80 hover:text-gold transition-colors"
+                  className="text-sm font-body tracking-wide text-off-white/80 hover:text-[#87CEEB] transition-colors"
                 >
                   {link.label}
                 </button>
@@ -65,7 +65,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   to={link.path}
-                  className="text-sm font-body tracking-wide text-off-white/80 hover:text-gold transition-colors"
+                  className="text-sm font-body tracking-wide text-off-white/80 hover:text-[#87CEEB] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
             <Link
               to="/#reservas"
               onClick={() => handleNavClick("/#reservas")}
-              className="px-5 py-2.5 text-sm font-body font-medium bg-gold text-off-white rounded-sm hover:bg-gold/90 transition-colors"
+              className="px-5 py-2.5 text-sm font-body font-medium bg-[#87CEEB] text-[#1A445C] rounded-sm hover:bg-[#78D4EC] transition-colors"
             >
               Reservar mesa
             </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
                   <button
                     key={link.label}
                     onClick={() => { handleNavClick(link.path); setMobileOpen(false); }}
-                    className="block text-off-white/80 hover:text-gold transition-colors font-body"
+                    className="block text-off-white/80 hover:text-[#78D4EC] transition-colors font-body text-left w-full"
                   >
                     {link.label}
                   </button>
@@ -114,7 +114,7 @@ export default function Navbar() {
                   <Link
                     key={link.label}
                     to={link.path}
-                    className="block text-off-white/80 hover:text-gold transition-colors font-body"
+                    className="block text-off-white/80 hover:text-[#78D4EC] transition-colors font-body"
                   >
                     {link.label}
                   </Link>
@@ -123,7 +123,7 @@ export default function Navbar() {
               <Link
                 to="/#reservas"
                 onClick={() => { handleNavClick("/#reservas"); setMobileOpen(false); }}
-                className="block w-full text-center px-5 py-3 font-body font-medium bg-gold text-off-white rounded-sm"
+                className="block w-full text-center px-5 py-3 font-body font-medium bg-[#87CEEB] text-[#1A445C] rounded-sm"
               >
                 Reservar mesa
               </Link>

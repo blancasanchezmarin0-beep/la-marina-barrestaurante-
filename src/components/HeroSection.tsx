@@ -19,7 +19,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-gold font-body text-xs tracking-[0.3em] uppercase mb-4"
+          className="text-[#87CEEB] font-body text-xs tracking-[0.3em] uppercase mb-4"
         >
           Desde 2007
         </motion.p>
@@ -61,7 +61,7 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => scrollTo("reservas")}
-            className="px-8 py-3.5 bg-gold text-off-white font-body text-sm font-medium tracking-wide hover:bg-gold/90 transition-colors rounded-sm"
+            className="px-8 py-3.5 bg-[#87CEEB] text-[#1A445C] font-body text-sm font-medium tracking-wide hover:bg-[#78D4EC] transition-colors rounded-sm"
           >
             Reservar mesa
           </button>
