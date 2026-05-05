@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png";
+import logoMarina from "@/assets/logo-marina.png";
 
 const navLinks = [
   { label: "Inicio", path: "/" },
@@ -46,9 +46,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="La Marina" className="h-10 w-auto" />
-            <span className="font-heading text-xl md:text-2xl font-bold tracking-wider text-off-white">LA MARINA</span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img 
+              src={logoMarina} 
+              alt="La Marina" 
+              className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" 
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

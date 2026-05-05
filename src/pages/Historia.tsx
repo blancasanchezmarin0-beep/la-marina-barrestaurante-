@@ -85,25 +85,25 @@ export default function HistoriaPage() {
             </AnimatedSection>
             {/* Minimalist floating year */}
             <div className="absolute -bottom-10 -right-10 hidden md:block">
-              <span className="text-[12rem] font-heading leading-none text-[#87CEEB]/10 select-none">2007</span>
+              <span className="text-[9rem] font-heading leading-none text-[#87CEEB]/10 select-none">2007</span>
             </div>
           </div>
 
-          <div className="space-y-12 order-1 lg:order-2">
+          <div className="space-y-10 order-1 lg:order-2">
             <AnimatedSection>
               <div className="flex items-center gap-4 mb-8">
-                <span className="w-12 h-[1px] bg-[#87CEEB]"></span>
-                <p className="font-body text-xs tracking-widest uppercase text-[#87CEEB] font-bold">EST. 2007</p>
+                <span className="w-10 h-[1px] bg-[#87CEEB]"></span>
+                <p className="font-body text-[10px] tracking-widest uppercase text-[#87CEEB] font-bold">EST. 2007</p>
               </div>
-              <h2 className="font-heading text-4xl md:text-6xl text-[#1A445C] leading-tight mb-10">El Origen</h2>
-              <div className="space-y-8 max-w-xl">
-                <p className="font-body text-gray-600 text-lg md:text-xl leading-[1.9] font-light">
+              <h2 className="font-heading text-3xl md:text-5xl text-[#1A445C] leading-tight mb-8">El Origen</h2>
+              <div className="space-y-6 max-w-lg">
+                <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.8] font-light">
                   La Marina abrió sus puertas en mayo de 2007 con una idea clara: <span className="text-[#1A445C] font-normal">rendir homenaje al sabor auténtico del mar.</span> Nacida como un sueño familiar a orillas del Guadalquivir, en Gelves, este proyecto creció entre tradición, producto fresco y el respeto por la cocina de siempre.
                 </p>
-                <p className="font-body text-gray-600 text-lg md:text-xl leading-[1.9] font-light">
+                <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.8] font-light">
                   Cada plato cuenta una historia que empieza en el mar y termina en la mesa. Aquí, la sencillez no es casualidad: es una elección. Porque cuando la materia prima es buena, solo hace falta tratarla con cariño.
                 </p>
-                <p className="font-body text-gray-600 text-lg leading-[1.9] font-light italic border-l-2 border-[#87CEEB] pl-8 py-2">
+                <p className="font-body text-gray-600 text-base leading-[1.8] font-light italic border-l-2 border-[#87CEEB] pl-6 py-2">
                   Hoy, La Marina sigue siendo ese lugar donde compartir, disfrutar sin prisas y volver a los sabores de verdad. Un rincón donde el tiempo se detiene y el protagonista siempre es el producto.
                 </p>
               </div>
@@ -115,26 +115,26 @@ export default function HistoriaPage() {
       {/* 3. Sección: Evolución - La Madurez y la Tierra */}
       <section className="relative py-24 md:py-48 bg-[#1A445C] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
-          <AnimatedSection className="text-center mb-16 md:mb-24">
-            <p className="font-body text-[10px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6">Trayectoria</p>
-            <h2 className="font-heading text-4xl md:text-7xl mb-8">Evolución</h2>
-            <div className="w-16 h-[1px] bg-[#87CEEB] mx-auto"></div>
+          <AnimatedSection className="text-center mb-16 md:mb-20">
+            <p className="font-body text-[9px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6">Trayectoria</p>
+            <h2 className="font-heading text-3xl md:text-6xl mb-8">Evolución</h2>
+            <div className="w-12 h-[1px] bg-[#87CEEB] mx-auto"></div>
           </AnimatedSection>
 
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="space-y-10 md:space-y-12">
+            <div className="space-y-8 md:space-y-10">
               <AnimatedSection>
                 <div className="flex items-center gap-4 mb-4 md:mb-6">
-                  <Beef className="text-[#87CEEB]" size={32} />
-                  <span className="font-body text-xs md:text-sm tracking-widest uppercase text-[#87CEEB] font-bold">La Madurez y la Tierra</span>
+                  <Beef className="text-[#87CEEB]" size={28} />
+                  <span className="font-body text-[10px] md:text-xs tracking-widest uppercase text-[#87CEEB] font-bold">La Madurez y la Tierra</span>
                 </div>
-                <h3 className="font-heading text-3xl md:text-5xl mb-8 leading-tight">Excelencia en cada corte</h3>
+                <h3 className="font-heading text-2xl md:text-4xl mb-6 leading-tight">Excelencia en cada corte</h3>
                 
-                <div className="space-y-6 mb-12">
-                  <p className="font-body text-gray-300 text-[17px] md:text-xl leading-[1.8] md:leading-[2] font-light max-w-xl">
+                <div className="space-y-4 mb-10">
+                  <p className="font-body text-gray-300 text-base md:text-[18px] leading-[1.7] md:leading-[1.8] font-light max-w-xl">
                     Sin perder nuestra esencia marinera, hemos incorporado carnes de alta gama: desde la potencia de la <span className="text-white font-normal border-b border-[#87CEEB]">Frisona y la Rubia Gallega</span>, hasta la delicadeza de la Turina de Portugal.
                   </p>
-                  <p className="font-body text-gray-300 text-[17px] md:text-xl leading-[1.8] md:leading-[2] font-light max-w-xl">
+                  <p className="font-body text-gray-300 text-base md:text-[18px] leading-[1.7] md:leading-[1.8] font-light max-w-xl">
                     Excelencia en cada corte, tratada con el mismo respeto que nuestros productos del mar.
                   </p>
                 </div>
@@ -169,13 +169,13 @@ export default function HistoriaPage() {
       </section>
 
       {/* 4. Sección: Expansión 2026 */}
-      <section className="py-32 md:py-52 bg-white">
+      <section className="py-24 md:py-44 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-            <AnimatedSection className="max-w-2xl">
-              <p className="font-body text-[11px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6 font-bold">Futuro</p>
-              <h2 className="font-heading text-5xl md:text-8xl text-[#1A445C] leading-[0.9] mb-8">Expansión <span className="text-[#87CEEB]">2026</span></h2>
-              <p className="font-body text-gray-500 text-lg md:text-xl leading-relaxed">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <AnimatedSection className="max-w-xl">
+              <p className="font-body text-[10px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6 font-bold">Futuro</p>
+              <h2 className="font-heading text-4xl md:text-6xl text-[#1A445C] leading-[0.9] mb-8">Expansión <span className="text-[#87CEEB]">2026</span></h2>
+              <p className="font-body text-gray-500 text-base md:text-lg leading-relaxed">
                 En 2026, abrimos un nuevo concepto junto al río, conectando Gelves y Coria del Río bajo una misma identidad. Disponemos de 4 espacios diseñados para cada ocasión:
               </p>
             </AnimatedSection>
@@ -197,9 +197,9 @@ export default function HistoriaPage() {
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                   <img src={space.img} alt={space.title} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A445C] via-[#1A445C]/20 to-transparent p-8 flex flex-col justify-end">
-                    <h4 className="font-heading text-2xl text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{space.title}</h4>
-                    <p className="font-body text-xs text-white/60 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 italic">{space.desc}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A445C] via-[#1A445C]/20 to-transparent p-6 flex flex-col justify-end">
+                    <h4 className="font-heading text-xl text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{space.title}</h4>
+                    <p className="font-body text-[11px] text-white/60 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 italic">{space.desc}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -209,28 +209,28 @@ export default function HistoriaPage() {
       </section>
 
       {/* 5. Sección final: Información de los dos locales */}
-      <section className="py-24 md:py-44 bg-gray-50 overflow-hidden relative">
+      <section className="py-24 md:py-36 bg-gray-50 overflow-hidden relative">
         <motion.img
           src={ancla}
           alt=""
-          className="absolute -bottom-20 -left-20 w-[400px] opacity-[0.03] select-none pointer-events-none"
+          className="absolute -bottom-20 -left-20 w-[350px] opacity-[0.03] select-none pointer-events-none"
         />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <AnimatedSection className="text-center mb-20">
-            <h2 className="font-heading text-4xl md:text-7xl text-[#1A445C]">Dos Sedes, Un Espíritu</h2>
-            <div className="mt-8 h-[2px] w-12 bg-[#87CEEB] mx-auto"></div>
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="font-heading text-3xl md:text-5xl text-[#1A445C]">Dos Sedes, Un Espíritu</h2>
+            <div className="mt-6 h-[1px] w-10 bg-[#87CEEB] mx-auto"></div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
             {/* Gelves */}
-            <AnimatedSection className="bg-white p-10 md:p-16 rounded-sm shadow-sm border-t-4 border-[#87CEEB] hover:shadow-xl transition-shadow duration-500">
-              <div className="flex justify-between items-start mb-12">
+            <AnimatedSection className="bg-white p-8 md:p-12 rounded-sm shadow-sm border-t-4 border-[#87CEEB] hover:shadow-xl transition-shadow duration-500">
+              <div className="flex justify-between items-start mb-10">
                 <div>
-                  <h3 className="font-heading text-3xl text-[#1A445C] mb-2">La Marina Gelves</h3>
-                  <p className="font-body text-xs tracking-widest uppercase text-[#87CEEB] font-bold">Nuestra Casa Original</p>
+                  <h3 className="font-heading text-2xl text-[#1A445C] mb-2">La Marina Gelves</h3>
+                  <p className="font-body text-[10px] tracking-widest uppercase text-[#87CEEB] font-bold">Nuestra Casa Original</p>
                 </div>
-                <Anchor className="text-[#87CEEB]" size={36} />
+                <Anchor className="text-[#87CEEB]" size={30} />
               </div>
               
               <div className="space-y-8 mb-12">
