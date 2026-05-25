@@ -9,8 +9,8 @@ import { MapPin, Phone, Clock, Mail, Flame, Beef, Anchor, Waves, ArrowRight } fr
 import ancla from "@/assets/ancla.png";
 import imgOrigen from "@/assets/gallery-fish.jpg";
 import imgMadurez from "@/assets/gallery-meat.jpg";
-import imgSpace1 from "@/assets/coria/salon.jpg";
-import imgSpace2 from "@/assets/coria-hero-2056.jpg"; // Using this as 'Coria1'
+import imgSpace1 from "@/assets/coria/salon-interior-real.jpg";
+import imgSpace2 from "@/assets/coria/terraza-exterior-real.jpg";
 import imgSpace3 from "@/assets/celebraciones-nueva.jpg"; // New celebrations hall image
 import imgSpace4 from "@/assets/coria/barril.jpg";
 import imgHeroVisual from "@/assets/coria-hero-2055.jpg";
