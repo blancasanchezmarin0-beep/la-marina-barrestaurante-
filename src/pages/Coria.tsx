@@ -12,8 +12,8 @@ import ancla from "@/assets/ancla.png";
 import timon from "@/assets/timon.png";
 
 import coriaHero from "@/assets/coria-hero-2055.jpg";
-import imgSalonCoria from "@/assets/coria/salon-interior.jpg";
-import imgTerrazaCoria from "@/assets/coria/terraza-exterior.jpg";
+import imgSalonCoria from "@/assets/coria/salon-interior-real.jpg";
+import imgTerrazaCoria from "@/assets/coria/terraza-exterior-real.jpg";
 import imgPatioBarriles from "@/assets/coria/patio-barriles.jpg";
 import imgCelebracionesCoria from "@/assets/coria/celebraciones.jpg";
 import imgPatioNoche from "@/assets/coria/patio-noche.jpg";
