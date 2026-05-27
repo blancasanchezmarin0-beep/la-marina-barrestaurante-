@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin, Heart, Church, Baby, Cake, PartyPopper } from "lucide-react";
+import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin, Heart, Church, Baby, Cake, PartyPopper, Sun, Maximize2, Flame, Gem } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -73,30 +73,109 @@ export default function CelebracionesPage() {
       </section>
 
 
-      {/* Salón interior */}
-      <section className="py-24 md:py-36 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
-          <AnimatedSection>
-            <div className="relative group">
-              <div className="absolute -inset-4 border border-[#87CEEB]/20 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700"></div>
-              <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
-                <img src={salon2} alt="Salón interior" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
-              </div>
+      {/* Salón interior — Editorial premium */}
+      <section className="relative py-28 md:py-44 bg-[#FDFBF9] overflow-hidden">
+        {/* Marca tipográfica de fondo */}
+        <div className="absolute top-10 right-0 pointer-events-none select-none hidden md:block">
+          <span className="font-heading italic text-[180px] lg:text-[240px] leading-none text-[#1A445C]/[0.035] tracking-tighter">
+            Interior
+          </span>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          {/* Imagen — protagonista */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 relative group"
+          >
+            {/* Etiqueta flotante */}
+            <div className="absolute -top-5 left-6 md:-left-5 z-20 bg-white shadow-xl px-5 py-3 rounded-full flex items-center gap-3 border border-[#87CEEB]/20">
+              <span className="w-2 h-2 rounded-full bg-[#87CEEB] animate-pulse" />
+              <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[#1A445C] font-semibold">
+                Espacio principal
+              </span>
             </div>
-          </AnimatedSection>
-          <AnimatedSection delay={0.2}>
-            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-[#87CEEB] font-bold mb-6">El interior</p>
-            <h2 className="font-heading text-3xl md:text-5xl text-[#1A445C] leading-tight mb-8">Salón interior</h2>
-            <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.8] font-light mb-5">
-              Un salón amplio, luminoso y versátil, preparado para acoger comuniones, bautizos, bodas y eventos
-              de empresa. Mesas redondas elegantemente vestidas, iluminación cálida y un ambiente cuidado al detalle.
+
+            {/* Marco decorativo */}
+            <div className="absolute -inset-3 md:-inset-5 border border-[#87CEEB]/25 translate-x-3 translate-y-3 md:translate-x-5 md:translate-y-5 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700" />
+
+            <div className="aspect-[4/5] md:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl relative">
+              <motion.img
+                src={salon2}
+                alt="Salón interior La Marina"
+                className="w-full h-full object-cover"
+                initial={{ scale: 1.15 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+              />
+              {/* Overlay cinematic sutil */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B35]/30 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
+            </div>
+
+            {/* Cita visual inferior */}
+            <div className="absolute -bottom-8 right-6 md:-right-6 bg-[#1A445C] text-white px-7 py-5 max-w-[280px] shadow-2xl rounded-sm">
+              <p className="font-heading italic text-sm md:text-base leading-snug">
+                "Cada celebración encuentra aquí su escenario."
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Contenido */}
+          <AnimatedSection delay={0.2} className="lg:col-span-5">
+            <div className="flex items-center gap-4 mb-7">
+              <span className="w-12 h-[1px] bg-[#87CEEB]" />
+              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-[#87CEEB] font-bold">
+                El interior
+              </p>
+            </div>
+
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A445C] leading-[1.05] mb-8 tracking-tight">
+              Donde cada detalle <span className="italic text-[#87CEEB]">celebra</span>.
+            </h2>
+
+            <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.85] font-light mb-6">
+              Un salón <span className="text-[#1A445C] font-normal">amplio y luminoso</span>, diseñado para
+              acoger los momentos más importantes con la calidez de un espacio cuidado al detalle. Mesas
+              vestidas con elegancia, iluminación envolvente y una atmósfera que invita a celebrar sin prisa.
             </p>
-            <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.8] font-light italic border-l-2 border-[#87CEEB] pl-6 py-1">
-              Un escenario sobrio y elegante donde cada celebración se siente única.
-            </p>
+
+            <blockquote className="relative font-heading italic text-xl md:text-2xl text-[#1A445C] leading-snug pl-6 border-l-2 border-[#87CEEB] mb-10">
+              Sobriedad, luz y carácter. <br />
+              <span className="text-[#87CEEB]">Un escenario hecho para recordar.</span>
+            </blockquote>
+
+            {/* Características con iconos */}
+            <div className="grid grid-cols-2 gap-5 md:gap-6">
+              {[
+                { icon: Maximize2, label: "Amplio y versátil" },
+                { icon: Sun, label: "Luz natural" },
+                { icon: Flame, label: "Iluminación cálida" },
+                { icon: Gem, label: "Montaje cuidado" },
+              ].map((f, i) => (
+                <motion.div
+                  key={f.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
+                  className="flex items-center gap-3 group cursor-default"
+                >
+                  <div className="p-2.5 border border-[#87CEEB]/30 rounded-full group-hover:bg-[#87CEEB]/10 group-hover:border-[#87CEEB] transition-all duration-500">
+                    <f.icon className="text-[#1A445C]" size={16} strokeWidth={1.3} />
+                  </div>
+                  <span className="font-body text-sm text-gray-700 font-light tracking-wide">{f.label}</span>
+                </motion.div>
+              ))}
+            </div>
           </AnimatedSection>
         </div>
       </section>
+
 
       {/* Terraza exterior */}
       <section className="py-24 md:py-36 bg-[#1A445C] text-white overflow-hidden">
