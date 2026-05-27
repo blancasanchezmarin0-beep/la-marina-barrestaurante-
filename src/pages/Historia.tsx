@@ -13,6 +13,7 @@ import imgSpace1 from "@/assets/coria/salon-interior-real.jpg";
 import imgSpace2 from "@/assets/coria/terraza-exterior-real.jpg";
 import imgSpace3 from "@/assets/celebraciones-nueva.jpg"; // New celebrations hall image
 import imgSpace4 from "@/assets/coria/barril.jpg";
+import imgSpace5 from "@/assets/salon/terraza-celebraciones.jpeg";
 import imgHeroVisual from "@/assets/coria-hero-2055.jpg";
 
 export default function HistoriaPage() {
