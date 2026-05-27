@@ -135,7 +135,7 @@ export default function CelebracionesPage() {
             </div>
 
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A445C] leading-[1.05] mb-8 tracking-tight">
-              Donde cada detalle <span className="italic text-[#87CEEB]">celebra</span>.
+              Salón <span className="italic text-[#87CEEB]">interior</span>.
             </h2>
 
             <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.85] font-light mb-6">
@@ -197,7 +197,7 @@ export default function CelebracionesPage() {
             </div>
 
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A445C] leading-[1.05] mb-8 tracking-tight">
-              Bajo el cielo, <span className="italic text-[#87CEEB]">sin límites</span>.
+              Terraza <span className="italic text-[#87CEEB]">exterior</span>.
             </h2>
 
             <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.85] font-light mb-6">
