@@ -65,36 +65,6 @@ export default function CelebracionesPage() {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-20 md:py-28 bg-[#F3E9E2]">
-        <div className="max-w-7xl mx-auto px-5 md:px-6">
-          <AnimatedSection className="mb-12 md:mb-16">
-            <p className="text-[#87CEEB] font-body text-xs tracking-[0.4em] uppercase font-bold mb-4">Galería</p>
-            <h2 className="font-heading font-normal text-4xl md:text-6xl text-[#0D2B35]">Espacios & ambientes</h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
-            {gallery.map((src, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                className={`group relative overflow-hidden rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500 ${
-                  i === 0 ? "md:col-span-8 aspect-[16/10]" :
-                  i === 1 ? "md:col-span-4 aspect-[3/4]" :
-                  i === 2 ? "md:col-span-4 aspect-[3/4]" :
-                  "md:col-span-8 aspect-[16/10]"
-                }`}
-              >
-                <img src={src} alt={`Salón de celebraciones ${i + 1}`} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Salón interior */}
       <section className="py-24 md:py-36 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
