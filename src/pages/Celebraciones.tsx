@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin } from "lucide-react";
+import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin, Heart, Church, Baby, Cake, PartyPopper } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
