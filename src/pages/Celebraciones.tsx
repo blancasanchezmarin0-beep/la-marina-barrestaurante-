@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin } from "lucide-react";
+import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin, Heart, Church, Baby, Cake, PartyPopper } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -48,22 +48,30 @@ export default function CelebracionesPage() {
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <AnimatedSection>
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <span className="w-10 h-[1px] bg-[#87CEEB]"></span>
-              <p className="text-[#87CEEB] font-body text-[10px] tracking-[0.4em] uppercase font-bold">Alquiler del espacio</p>
-              <span className="w-10 h-[1px] bg-[#87CEEB]"></span>
-            </div>
-            <p className="font-body text-gray-600 text-base md:text-lg leading-[1.8] font-light">
-              Alquiler del espacio para bodas, comuniones, bautizos, cumpleaños y eventos privados.
-              Para información sobre <span className="text-[#1A445C] font-normal">servicio de catering</span>, consultar directamente con el local.
-            </p>
-          </AnimatedSection>
+      {/* Marquee de eventos */}
+      <section className="py-8 md:py-10 bg-white border-y border-[#87CEEB]/15 overflow-hidden group">
+        <div className="flex items-center gap-16 md:gap-24 animate-marquee group-hover:[animation-duration:60s] whitespace-nowrap">
+          {[...Array(2)].flatMap((_, loop) =>
+            [
+              { icon: Heart, label: "Bodas" },
+              { icon: Church, label: "Comuniones" },
+              { icon: Baby, label: "Bautizos" },
+              { icon: Cake, label: "Cumpleaños" },
+              { icon: PartyPopper, label: "Eventos Privados" },
+            ].map((item, i) => (
+              <div
+                key={`${loop}-${i}`}
+                className="flex items-center gap-4 shrink-0 text-[#1A445C] hover:text-[#87CEEB] transition-colors duration-300"
+              >
+                <item.icon size={22} strokeWidth={1.4} className="text-[#87CEEB]" />
+                <span className="font-heading text-xl md:text-2xl tracking-wide">{item.label}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB]/40 ml-12 md:ml-20" aria-hidden="true" />
+              </div>
+            ))
+          )}
         </div>
       </section>
+
 
       {/* Salón interior */}
       <section className="py-24 md:py-36 bg-white overflow-hidden">
