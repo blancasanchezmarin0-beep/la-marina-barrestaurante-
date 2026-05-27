@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin, Heart, Church, Baby, Cake, PartyPopper, Sun, Maximize2, Flame, Gem } from "lucide-react";
+import { Phone, DoorOpen, DoorClosed, Bath, Users, Sparkles, MapPin, Heart, Church, Baby, Cake, PartyPopper, Sun, Maximize2, Flame, Gem, Umbrella, Music, Moon, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -177,25 +177,106 @@ export default function CelebracionesPage() {
       </section>
 
 
-      {/* Terraza exterior */}
-      <section className="py-24 md:py-36 bg-[#1A445C] text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
-          <AnimatedSection delay={0.1} className="order-2 lg:order-1">
-            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-[#87CEEB] font-bold mb-6">El exterior</p>
-            <h2 className="font-heading text-3xl md:text-5xl leading-tight mb-8">Terraza exterior</h2>
-            <p className="font-body text-gray-300 text-base md:text-[17px] leading-[1.8] font-light mb-5">
-              Un porche cubierto con techo de madera y guirnaldas de luces que crean una atmósfera mágica al
-              caer la tarde. Ideal para cócteles de bienvenida, sobremesas largas o como complemento al salón principal.
+      {/* Terraza exterior — Editorial premium */}
+      <section className="relative py-28 md:py-44 bg-white overflow-hidden">
+        {/* Marca tipográfica de fondo */}
+        <div className="absolute top-10 left-0 pointer-events-none select-none hidden md:block">
+          <span className="font-heading italic text-[180px] lg:text-[240px] leading-none text-[#1A445C]/[0.035] tracking-tighter">
+            Exterior
+          </span>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          {/* Contenido — a la izquierda */}
+          <AnimatedSection delay={0.2} className="lg:col-span-5 order-2 lg:order-1">
+            <div className="flex items-center gap-4 mb-7">
+              <span className="w-12 h-[1px] bg-[#87CEEB]" />
+              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-[#87CEEB] font-bold">
+                El exterior
+              </p>
+            </div>
+
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A445C] leading-[1.05] mb-8 tracking-tight">
+              Bajo el cielo, <span className="italic text-[#87CEEB]">sin límites</span>.
+            </h2>
+
+            <p className="font-body text-gray-600 text-base md:text-[17px] leading-[1.85] font-light mb-6">
+              Un porche cubierto con <span className="text-[#1A445C] font-normal">techo de madera</span> y guirnaldas de
+              luces que dibujan una atmósfera mágica al caer la tarde. Ideal para cócteles de bienvenida,
+              sobremesas largas o como complemento perfecto al salón principal.
             </p>
-            <p className="font-body text-gray-300 text-base md:text-[17px] leading-[1.8] font-light italic border-l-2 border-[#87CEEB] pl-6 py-1">
-              Una experiencia al aire libre, íntima y acogedora.
-            </p>
-          </AnimatedSection>
-          <AnimatedSection className="order-1 lg:order-2">
-            <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
-              <img src={terraza1} alt="Terraza exterior" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+
+            <blockquote className="relative font-heading italic text-xl md:text-2xl text-[#1A445C] leading-snug pl-6 border-l-2 border-[#87CEEB] mb-10">
+              Aire libre, intimidad y una luz <br />
+              <span className="text-[#87CEEB]">que solo el atardecer regala.</span>
+            </blockquote>
+
+            {/* Características con iconos */}
+            <div className="grid grid-cols-2 gap-5 md:gap-6">
+              {[
+                { icon: Umbrella, label: "Porche cubierto" },
+                { icon: Music, label: "Ambiente musical" },
+                { icon: Moon, label: "Luces mágicas" },
+                { icon: Star, label: "Noches únicas" },
+              ].map((f, i) => (
+                <motion.div
+                  key={f.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
+                  className="flex items-center gap-3 group cursor-default"
+                >
+                  <div className="p-2.5 border border-[#87CEEB]/30 rounded-full group-hover:bg-[#87CEEB]/10 group-hover:border-[#87CEEB] transition-all duration-500">
+                    <f.icon className="text-[#1A445C]" size={16} strokeWidth={1.3} />
+                  </div>
+                  <span className="font-body text-sm text-gray-700 font-light tracking-wide">{f.label}</span>
+                </motion.div>
+              ))}
             </div>
           </AnimatedSection>
+
+          {/* Imagen — protagonista, a la derecha */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 relative group order-1 lg:order-2"
+          >
+            {/* Etiqueta flotante */}
+            <div className="absolute -top-5 right-6 md:-right-5 z-20 bg-white shadow-xl px-5 py-3 rounded-full flex items-center gap-3 border border-[#87CEEB]/20">
+              <span className="w-2 h-2 rounded-full bg-[#87CEEB] animate-pulse" />
+              <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[#1A445C] font-semibold">
+                Ambiente al aire libre
+              </span>
+            </div>
+
+            {/* Marco decorativo */}
+            <div className="absolute -inset-3 md:-inset-5 border border-[#87CEEB]/25 -translate-x-3 translate-y-3 md:-translate-x-5 md:translate-y-5 -z-10 group-hover:-translate-x-2 group-hover:translate-y-2 transition-transform duration-700" />
+
+            <div className="aspect-[4/5] md:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl relative">
+              <motion.img
+                src={terraza1}
+                alt="Terraza exterior La Marina"
+                className="w-full h-full object-cover"
+                initial={{ scale: 1.15 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+              />
+              {/* Overlay cinematic sutil */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B35]/30 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
+            </div>
+
+            {/* Cita visual inferior */}
+            <div className="absolute -bottom-8 left-6 md:-left-6 bg-[#1A445C] text-white px-7 py-5 max-w-[280px] shadow-2xl rounded-sm">
+              <p className="font-heading italic text-sm md:text-base leading-snug">
+                "El cielo como techo, la celebración como protagonista."
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
