@@ -177,7 +177,7 @@ export default function HistoriaPage() {
               <p className="font-body text-[10px] tracking-[0.5em] uppercase text-[#87CEEB] mb-6 font-bold">Futuro</p>
               <h2 className="font-heading text-4xl md:text-6xl text-[#1A445C] leading-[0.9] mb-8">Expansión <span className="text-[#87CEEB]">2026</span></h2>
               <p className="font-body text-gray-500 text-base md:text-lg leading-relaxed">
-                En 2026, abrimos un nuevo concepto junto al río, conectando Gelves y Coria del Río bajo una misma identidad. Disponemos de 4 espacios diseñados para cada ocasión:
+                En 2026, abrimos un nuevo concepto junto al río, conectando Gelves y Coria del Río bajo una misma identidad. Disponemos de 5 espacios diseñados para cada ocasión:
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.3} className="hidden md:block">
@@ -188,12 +188,13 @@ export default function HistoriaPage() {
             </AnimatedSection>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {[
               { title: "Terraza Exterior", desc: "Brisa directa del Guadalquivir", img: imgSpace2, to: null },
               { title: "Patio Interior", desc: "Un oasis de luz natural", img: imgSpace4, to: null },
               { title: "Salón Interior", desc: "Elegancia y confort contemporáneo", img: imgSpace1, to: null },
-              { title: "Salón de Celebraciones", desc: "El escenario para tus momentos inolvidables", img: imgSpace3, to: "/celebraciones" }
+              { title: "Salón de Celebraciones", desc: "El escenario para tus momentos inolvidables", img: imgSpace3, to: "/celebraciones" },
+              { title: "Terraza Exterior Celebraciones", desc: "Eventos al aire libre con vistas únicas", img: imgSpace5, to: "/celebraciones" }
             ].map((space, i) => {
               const card = (
                 <div className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
