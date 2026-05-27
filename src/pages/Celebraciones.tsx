@@ -9,6 +9,7 @@ import salon1 from "@/assets/salon/salon-1.jpeg";
 import salon2 from "@/assets/salon/salon-2.jpeg";
 import terraza1 from "@/assets/salon/terraza-1.jpeg";
 import terraza2 from "@/assets/salon/terraza-2.jpeg";
+import fondoContacto from "@/assets/salon/fondo-contacto.jpeg";
 
 const PHONE = "+34 654 58 18 88";
 const PHONE_TEL = "+34654581888";
