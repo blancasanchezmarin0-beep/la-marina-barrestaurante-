@@ -145,8 +145,7 @@ export default function CelebracionesPage() {
             </p>
 
             <blockquote className="relative font-heading italic text-xl md:text-2xl text-[#1A445C] leading-snug pl-6 border-l-2 border-[#87CEEB] mb-10">
-              Sobriedad, luz y carácter. <br />
-              <span className="text-[#87CEEB]">Un escenario hecho para recordar.</span>
+              Un salón hecho para celebrar.
             </blockquote>
 
             {/* Características con iconos */}
@@ -207,8 +206,7 @@ export default function CelebracionesPage() {
             </p>
 
             <blockquote className="relative font-heading italic text-xl md:text-2xl text-[#1A445C] leading-snug pl-6 border-l-2 border-[#87CEEB] mb-10">
-              Aire libre, intimidad y una luz <br />
-              <span className="text-[#87CEEB]">que solo el atardecer regala.</span>
+              Un entorno exterior privado.
             </blockquote>
 
             {/* Características con iconos */}
