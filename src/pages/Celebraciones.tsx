@@ -9,6 +9,7 @@ import salon1 from "@/assets/salon/salon-1.jpeg";
 import salon2 from "@/assets/salon/salon-2.jpeg";
 import terraza1 from "@/assets/salon/terraza-1.jpeg";
 import terraza2 from "@/assets/salon/terraza-2.jpeg";
+import fondoContacto from "@/assets/salon/fondo-contacto.jpeg";
 
 const PHONE = "+34 654 58 18 88";
 const PHONE_TEL = "+34654581888";
@@ -61,36 +62,6 @@ export default function CelebracionesPage() {
               Para información sobre <span className="text-[#1A445C] font-normal">servicio de catering</span>, consultar directamente con el local.
             </p>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="py-20 md:py-28 bg-[#F3E9E2]">
-        <div className="max-w-7xl mx-auto px-5 md:px-6">
-          <AnimatedSection className="mb-12 md:mb-16">
-            <p className="text-[#87CEEB] font-body text-xs tracking-[0.4em] uppercase font-bold mb-4">Galería</p>
-            <h2 className="font-heading font-normal text-4xl md:text-6xl text-[#0D2B35]">Espacios & ambientes</h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
-            {gallery.map((src, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                className={`group relative overflow-hidden rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500 ${
-                  i === 0 ? "md:col-span-8 aspect-[16/10]" :
-                  i === 1 ? "md:col-span-4 aspect-[3/4]" :
-                  i === 2 ? "md:col-span-4 aspect-[3/4]" :
-                  "md:col-span-8 aspect-[16/10]"
-                }`}
-              >
-                <img src={src} alt={`Salón de celebraciones ${i + 1}`} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -167,34 +138,68 @@ export default function CelebracionesPage() {
       </section>
 
       {/* Contacto */}
-      <section className="py-24 md:py-36 bg-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={fondoContacto} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#0D2B35]/70" />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection>
             <p className="text-[#87CEEB] font-body text-xs tracking-[0.4em] uppercase font-bold mb-6">Reserva tu evento</p>
-            <h2 className="font-heading text-4xl md:text-6xl text-[#1A445C] mb-6 leading-tight">
+            <h2 className="font-heading text-4xl md:text-6xl text-white mb-6 leading-tight">
               Hablemos de tu celebración
             </h2>
-            <p className="font-body text-gray-500 text-base md:text-lg leading-relaxed mb-12 font-light">
+            <p className="font-body text-white/70 text-base md:text-lg leading-relaxed mb-12 font-light">
               Consulta disponibilidad de fechas y condiciones de alquiler llamando directamente al local.
             </p>
 
             <a
               href={`tel:${PHONE_TEL}`}
-              className="inline-flex items-center gap-4 bg-[#1A445C] text-white px-10 md:px-14 py-5 md:py-6 rounded-full hover:bg-[#2a5b7a] transition-all duration-300 shadow-xl hover:shadow-2xl group"
+              className="inline-flex items-center gap-4 bg-white/95 text-[#1A445C] px-10 md:px-14 py-5 md:py-6 rounded-full hover:bg-white transition-all duration-300 shadow-xl hover:shadow-2xl group"
             >
               <div className="p-3 bg-[#87CEEB]/20 rounded-full group-hover:bg-[#87CEEB]/30 transition-colors">
-                <Phone className="text-[#87CEEB]" size={22} />
+                <Phone className="text-[#1A445C]" size={22} />
               </div>
               <div className="text-left">
-                <p className="font-body text-[10px] tracking-[0.4em] uppercase text-[#87CEEB] mb-1">Llámanos</p>
+                <p className="font-body text-[10px] tracking-[0.4em] uppercase text-[#1A445C]/70 mb-1">Llámanos</p>
                 <p className="font-heading text-xl md:text-2xl">{PHONE}</p>
               </div>
             </a>
 
-            <p className="font-body text-gray-400 text-xs mt-10 flex items-center justify-center gap-2">
+            <p className="font-body text-white/50 text-xs mt-10 flex items-center justify-center gap-2">
               <MapPin size={14} className="text-[#87CEEB]" /> La Marina · Coria del Río
             </p>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-20 md:py-28 bg-[#F3E9E2]">
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
+          <AnimatedSection className="mb-12 md:mb-16">
+            <p className="text-[#87CEEB] font-body text-xs tracking-[0.4em] uppercase font-bold mb-4">Galería</p>
+            <h2 className="font-heading font-normal text-4xl md:text-6xl text-[#0D2B35]">Espacios & ambientes</h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
+            {gallery.map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+                className={`group relative overflow-hidden rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500 ${
+                  i === 0 ? "md:col-span-8 aspect-[16/10]" :
+                  i === 1 ? "md:col-span-4 aspect-[3/4]" :
+                  i === 2 ? "md:col-span-4 aspect-[3/4]" :
+                  "md:col-span-8 aspect-[16/10]"
+                }`}
+              >
+                <img src={src} alt={`Salón de celebraciones ${i + 1}`} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
