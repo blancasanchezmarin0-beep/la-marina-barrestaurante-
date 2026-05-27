@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -78,7 +79,7 @@ export default function CoriaPage() {
           <div className="flex md:grid md:grid-cols-12 gap-6 md:gap-8 overflow-x-auto md:overflow-visible no-scrollbar -mx-5 px-5 md:mx-0 md:px-0">
             
             {/* Card 1: Salón de Celebraciones (Wide & Tall in Bento) */}
-            <div className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-8 md:row-span-2 group relative h-[500px] md:h-[700px] rounded-[40px] overflow-hidden shadow-2xl">
+            <Link to="/celebraciones" className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-8 md:row-span-2 group relative h-[500px] md:h-[700px] rounded-[40px] overflow-hidden shadow-2xl block">
               <img src={imgCelebracionesCoria} alt="Salón de Celebraciones" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110" />
               <div className="absolute top-10 left-10">
                 <h3 className="font-heading text-3xl md:text-5xl text-white drop-shadow-xl">Salón de Celebraciones</h3>
@@ -94,11 +95,11 @@ export default function CoriaPage() {
                   El lugar perfecto para eventos especiales, diseñado para momentos que merecen ser recordados por siempre.
                 </p>
                 <div className="mt-6 flex items-center gap-3">
-                  <span className="text-[#87CEEB] text-[10px] tracking-widest uppercase font-bold">Capacidad Premium</span>
+                  <span className="text-[#87CEEB] text-[10px] tracking-widest uppercase font-bold">Descubre el espacio →</span>
                   <div className="h-[1px] flex-grow bg-[#87CEEB]/30"></div>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Card 2: Salón Interior */}
             <div className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-4 group relative h-[450px] md:h-auto rounded-[40px] overflow-hidden shadow-xl">

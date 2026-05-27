@@ -189,12 +189,12 @@ export default function HistoriaPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Terraza Exterior", desc: "Brisa directa del Guadalquivir", img: imgSpace2 },
-              { title: "Patio Interior", desc: "Un oasis de luz natural", img: imgSpace4 },
-              { title: "Salón Interior", desc: "Elegancia y confort contemporáneo", img: imgSpace1 },
-              { title: "Salón de Celebraciones", desc: "El escenario para tus momentos inolvidables", img: imgSpace3 }
-            ].map((space, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
+              { title: "Terraza Exterior", desc: "Brisa directa del Guadalquivir", img: imgSpace2, to: null },
+              { title: "Patio Interior", desc: "Un oasis de luz natural", img: imgSpace4, to: null },
+              { title: "Salón Interior", desc: "Elegancia y confort contemporáneo", img: imgSpace1, to: null },
+              { title: "Salón de Celebraciones", desc: "El escenario para tus momentos inolvidables", img: imgSpace3, to: "/celebraciones" }
+            ].map((space, i) => {
+              const card = (
                 <div className="group relative aspect-[3/4] overflow-hidden rounded-sm cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                   <img src={space.img} alt={space.title} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A445C] via-[#1A445C]/20 to-transparent p-6 flex flex-col justify-end">
@@ -202,8 +202,13 @@ export default function HistoriaPage() {
                     <p className="font-body text-[11px] text-white/60 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 italic">{space.desc}</p>
                   </div>
                 </div>
-              </AnimatedSection>
-            ))}
+              );
+              return (
+                <AnimatedSection key={i} delay={i * 0.1}>
+                  {space.to ? <Link to={space.to}>{card}</Link> : card}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>

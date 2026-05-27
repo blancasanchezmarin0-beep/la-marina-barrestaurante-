@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Historia from "./pages/Historia";
 import Gelves from "./pages/Gelves";
 import Coria from "./pages/Coria";
+import Celebraciones from "./pages/Celebraciones";
 import NotFound from "./pages/NotFound";
 import SplashScreen from "./components/SplashScreen";
 import ScrollToTop from "./components/ScrollToTop";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/historia" element={<Historia />} />
           <Route path="/gelves" element={<Gelves />} />
           <Route path="/coria" element={<Coria />} />
+          <Route path="/celebraciones" element={<Celebraciones />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
