@@ -214,8 +214,8 @@ export default function CelebracionesPage() {
               {[
                 { icon: Umbrella, label: "Porche cubierto" },
                 { icon: Music, label: "Ambiente musical" },
-                { icon: Moon, label: "Luces mágicas" },
-                { icon: Star, label: "Noches únicas" },
+                { icon: Moon, label: "Iluminación" },
+                { icon: Star, label: "Cielo abierto" },
               ].map((f, i) => (
                 <motion.div
                   key={f.label}
