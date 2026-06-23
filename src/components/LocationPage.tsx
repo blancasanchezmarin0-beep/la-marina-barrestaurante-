@@ -107,7 +107,7 @@ export default function LocationPage({
 
       <GaleriaSection images={galleryImages} />
 
-      <HorariosSection />
+      <HorariosSection location={hoursLocation} />
 
       <ReservaLocalSection 
         locationName={name}
