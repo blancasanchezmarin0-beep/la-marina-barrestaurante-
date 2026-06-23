@@ -12,7 +12,14 @@ Deno.serve(async (req) => {
 
   try {
     const url = new URL(req.url);
-    const location = (url.searchParams.get('location') ?? 'coria').toLowerCase();
+    let location = url.searchParams.get('location');
+    if (!location && (req.method === 'POST' || req.method === 'PUT')) {
+      try {
+        const body = await req.json();
+        if (body && typeof body.location === 'string') location = body.location;
+      } catch { /* ignore */ }
+    }
+    location = (location ?? 'coria').toLowerCase();
     const placeId = PLACE_IDS[location];
     if (!placeId) {
       return new Response(JSON.stringify({ error: `Unknown location: ${location}` }), {
