@@ -22,10 +22,11 @@ interface LocationPageProps {
   description: string;
   mapsLink?: string;
   galleryImages?: any[];
+  hoursLocation?: "coria" | "gelves";
 }
 
 export default function LocationPage({ 
-  name, address, phone, heroImage, reservaImage, mapsEmbed, menuKey, description, mapsLink, galleryImages 
+  name, address, phone, heroImage, reservaImage, mapsEmbed, menuKey, description, mapsLink, galleryImages, hoursLocation 
 }: LocationPageProps) {
   const [activeCategory, setActiveCategory] = useState(0);
   const categories = menuData[menuKey] || [];
