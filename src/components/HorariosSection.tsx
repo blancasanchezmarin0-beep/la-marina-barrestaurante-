@@ -1,15 +1,64 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 import ancla from "@/assets/ancla.png";
+import { supabase } from "@/integrations/supabase/client";
 
-const schedule = [
+type ScheduleItem = { day: string; hours: string; closed: boolean };
+
+const fallbackSchedule: ScheduleItem[] = [
   { day: "Lunes", hours: "Cerrado", closed: true },
-  { day: "Martes, Miércoles y Jueves", hours: "12:00 – 18:00" },
-  { day: "Viernes y Sábado", hours: "12:00 – 17:00  |  20:00 – 1:00" },
-  { day: "Domingo", hours: "12:00 – 17:00" },
+  { day: "Martes", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
+  { day: "Miércoles", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
+  { day: "Jueves", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
+  { day: "Viernes", hours: "12:00 – 17:00  |  20:00 – 24:00", closed: false },
+  { day: "Sábado", hours: "12:00 – 17:00  |  20:00 – 24:00", closed: false },
+  { day: "Domingo", hours: "12:00 – 18:00", closed: false },
 ];
 
+function capitalize(s: string) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function parseWeekday(line: string): ScheduleItem {
+  // Format: "lunes: Cerrado" / "martes: 12:00–18:00, 20:30–0:30"
+  const idx = line.indexOf(":");
+  if (idx === -1) return { day: line, hours: "", closed: false };
+  const day = capitalize(line.slice(0, idx).trim());
+  let hours = line.slice(idx + 1).trim();
+  const closed = /cerrado/i.test(hours);
+  if (!closed) {
+    hours = hours
+      .replace(/–/g, " – ")
+      .replace(/,\s*/g, "  |  ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  return { day, hours, closed };
+}
+
 export default function HorariosSection() {
+  const [schedule, setSchedule] = useState<ScheduleItem[]>(fallbackSchedule);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke("coria-hours");
+        if (error) throw error;
+        const lines: string[] | undefined = data?.weekdayDescriptions;
+        if (!cancelled && Array.isArray(lines) && lines.length === 7) {
+          setSchedule(lines.map(parseWeekday));
+        }
+      } catch (e) {
+        console.warn("coria-hours fetch failed, using fallback", e);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section className="relative py-28 md:py-40 bg-white overflow-hidden">
       {/* Anchor watermark */}
@@ -36,12 +85,9 @@ export default function HorariosSection() {
         {/* Schedule list */}
         <div className="max-w-lg mx-auto">
           {schedule.map((item, i) => (
-            <AnimatedSection
-              key={item.day}
-              delay={i * 0.08}
-            >
+            <AnimatedSection key={item.day} delay={i * 0.05}>
               <div
-                className={`flex justify-between items-baseline gap-6 py-7 ${
+                className={`flex justify-between items-baseline gap-6 py-5 ${
                   i < schedule.length - 1 ? "border-b border-[#87CEEB]/20" : ""
                 }`}
               >
@@ -53,10 +99,8 @@ export default function HorariosSection() {
                   {item.day}
                 </h4>
                 <span
-                  className={`font-body font-normal text-base md:text-lg whitespace-nowrap ${
-                    item.closed
-                      ? "text-[#1A445C]/30 italic"
-                      : "text-[#1A445C]"
+                  className={`font-body font-normal text-sm md:text-base whitespace-nowrap ${
+                    item.closed ? "text-[#1A445C]/30 italic" : "text-[#1A445C]"
                   }`}
                 >
                   {item.hours}
@@ -74,6 +118,9 @@ export default function HorariosSection() {
           >
             Reservar mesa
           </Link>
+          <p className="mt-6 text-[10px] tracking-[0.3em] uppercase text-[#1A445C]/40 font-body">
+            Horarios sincronizados con Google
+          </p>
         </AnimatedSection>
       </div>
     </section>
