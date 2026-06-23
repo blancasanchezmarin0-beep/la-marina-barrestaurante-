@@ -6,15 +6,26 @@ import { supabase } from "@/integrations/supabase/client";
 
 type ScheduleItem = { day: string; hours: string; closed: boolean };
 
-const fallbackSchedule: ScheduleItem[] = [
-  { day: "Lunes", hours: "Cerrado", closed: true },
-  { day: "Martes", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
-  { day: "Miércoles", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
-  { day: "Jueves", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
-  { day: "Viernes", hours: "12:00 – 17:00  |  20:00 – 24:00", closed: false },
-  { day: "Sábado", hours: "12:00 – 17:00  |  20:00 – 24:00", closed: false },
-  { day: "Domingo", hours: "12:00 – 18:00", closed: false },
-];
+const fallbackSchedules: Record<string, ScheduleItem[]> = {
+  coria: [
+    { day: "Lunes", hours: "Cerrado", closed: true },
+    { day: "Martes", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
+    { day: "Miércoles", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
+    { day: "Jueves", hours: "12:00 – 18:00  |  20:30 – 0:30", closed: false },
+    { day: "Viernes", hours: "12:00 – 17:00  |  20:00 – 24:00", closed: false },
+    { day: "Sábado", hours: "12:00 – 17:00  |  20:00 – 24:00", closed: false },
+    { day: "Domingo", hours: "12:00 – 18:00", closed: false },
+  ],
+  gelves: [
+    { day: "Lunes", hours: "Cerrado", closed: true },
+    { day: "Martes", hours: "12:00 – 18:00", closed: false },
+    { day: "Miércoles", hours: "12:00 – 18:00", closed: false },
+    { day: "Jueves", hours: "12:00 – 18:00", closed: false },
+    { day: "Viernes", hours: "12:00 – 17:00  |  20:00 – 1:00", closed: false },
+    { day: "Sábado", hours: "12:00 – 17:00  |  20:00 – 1:00", closed: false },
+    { day: "Domingo", hours: "12:00 – 17:00", closed: false },
+  ],
+};
 
 function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
@@ -37,27 +48,35 @@ function parseWeekday(line: string): ScheduleItem {
   return { day, hours, closed };
 }
 
-export default function HorariosSection() {
-  const [schedule, setSchedule] = useState<ScheduleItem[]>(fallbackSchedule);
+interface HorariosSectionProps {
+  location?: "coria" | "gelves";
+}
+
+export default function HorariosSection({ location = "coria" }: HorariosSectionProps) {
+  const [schedule, setSchedule] = useState<ScheduleItem[]>(
+    fallbackSchedules[location] ?? fallbackSchedules.coria
+  );
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        const { data, error } = await supabase.functions.invoke("coria-hours");
+        const { data, error } = await supabase.functions.invoke("coria-hours", {
+          body: { location },
+        });
         if (error) throw error;
         const lines: string[] | undefined = data?.weekdayDescriptions;
         if (!cancelled && Array.isArray(lines) && lines.length === 7) {
           setSchedule(lines.map(parseWeekday));
         }
       } catch (e) {
-        console.warn("coria-hours fetch failed, using fallback", e);
+        console.warn("hours fetch failed, using fallback", e);
       }
     })();
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [location]);
 
   return (
     <section className="relative py-28 md:py-40 bg-white overflow-hidden">
