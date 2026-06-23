@@ -188,7 +188,7 @@ export default function CoriaPage() {
 
       <GaleriaSection images={coriaGalleryImages} />
       
-      <HorariosSection />
+      <HorariosSection location="coria" />
       
       <ReservaLocalSection 
         locationName="Coria" 
