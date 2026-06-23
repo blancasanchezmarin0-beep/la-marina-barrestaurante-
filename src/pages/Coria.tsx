@@ -17,6 +17,7 @@ import imgSalonCoria from "@/assets/coria/salon-interior-real.jpg";
 import imgTerrazaCoria from "@/assets/coria/terraza-exterior-real.jpg";
 import imgPatioBarriles from "@/assets/coria/patio-barriles.jpg";
 import imgCelebracionesCoria from "@/assets/coria/celebraciones.jpg";
+import salon1Img from "@/assets/salon/salon-1.jpeg";
 import imgPatioNoche from "@/assets/coria/patio-noche.jpg";
 
 const coriaGalleryImages = [
@@ -80,7 +81,7 @@ export default function CoriaPage() {
             
             {/* Card 1: Salón de Celebraciones (Wide & Tall in Bento) */}
             <Link to="/celebraciones" className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-8 md:row-span-2 group relative h-[500px] md:h-[700px] rounded-[40px] overflow-hidden shadow-2xl block">
-              <img src={imgCelebracionesCoria} alt="Salón de Celebraciones" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110" />
+              <img src={salon1Img} alt="Salón de Celebraciones" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110" />
               <div className="absolute top-10 left-10">
                 <h3 className="font-heading text-3xl md:text-5xl text-white drop-shadow-xl">Salón de Celebraciones</h3>
               </div>

@@ -104,7 +104,7 @@ export default function CelebracionesPage() {
 
             <div className="aspect-[4/5] md:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl relative">
               <motion.img
-                src={salon2}
+                src={salon1}
                 alt="Salón interior La Marina"
                 className="w-full h-full object-cover"
                 initial={{ scale: 1.15 }}
@@ -255,7 +255,7 @@ export default function CelebracionesPage() {
 
             <div className="aspect-[4/5] md:aspect-[5/6] rounded-sm overflow-hidden shadow-2xl relative">
               <motion.img
-                src={terraza1}
+                src={terraza2}
                 alt="Terraza exterior La Marina"
                 className="w-full h-full object-cover"
                 initial={{ scale: 1.15 }}
