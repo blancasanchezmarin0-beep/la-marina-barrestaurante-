@@ -17,6 +17,7 @@ import imgSalonCoria from "@/assets/coria/salon-interior-real.jpg";
 import imgTerrazaCoria from "@/assets/coria/terraza-exterior-real.jpg";
 import imgPatioBarriles from "@/assets/coria/patio-barriles.jpg";
 import imgCelebracionesCoria from "@/assets/coria/celebraciones.jpg";
+import salon1Img from "@/assets/salon/salon-1.jpeg";
 import imgPatioNoche from "@/assets/coria/patio-noche.jpg";
 
 const coriaGalleryImages = [
